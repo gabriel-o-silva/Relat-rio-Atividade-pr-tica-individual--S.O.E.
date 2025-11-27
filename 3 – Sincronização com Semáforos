@@ -1,0 +1,34 @@
+nano semaphore_example.py#(execute no terminal para abrir o editor de texto nano)
+
+# semaphore_example.py
+# Sincronização com semáforo usando threads em Python.
+# Executar com: python3 semaphore_example.py
+
+import threading
+
+# Cria um semáforo com valor inicial 1 (equivalente a um mutex)
+sem = threading.Semaphore(1)
+
+def tarefa(name):
+    # "with sem:" automaticamente:
+    # - chama sem.acquire() ao entrar
+    # - chama sem.release() ao sair
+    with sem:
+        print(f"Thread {name} executando")
+
+# Cria duas threads
+t1 = threading.Thread(target=tarefa, args=("A",))
+t2 = threading.Thread(target=tarefa, args=("B",))
+
+# Inicia as threads
+t1.start()
+t2.start()
+
+# Espera ambas terminarem
+t1.join()
+t2.join()
+#salve e saia do editor de texto nano
+
+python3 semaphore_example.py#(execute no terminal para gerar a saída)
+#Thread A executando
+#Thread B executando
