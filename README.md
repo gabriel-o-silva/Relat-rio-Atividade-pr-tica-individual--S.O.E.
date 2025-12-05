@@ -11,6 +11,14 @@ Demonstrar o uso de:
 
 ##  Arquitetura do Projeto
 
+projeto_final/
+ ├── chat_server.c
+ ├── chat_client.c
+ ├── chat_server_fifo
+ ├── chat_client_fifo
+ └── Makefile (se quiser)
+
+
 O sistema tem 2 processos:
 
 ### **1. Servidor**
@@ -35,7 +43,7 @@ Ambos utilizam:
 
 # Local IPC Chat – Comunicação Entre Processos com Pipes Nomeados
 
-## 🎯 Objetivo
+## Objetivo
 Demonstrar o uso de:
 - Processos e threads POSIX,
 - Mecanismos de sincronização (mutexes e semáforos),
@@ -44,7 +52,7 @@ Demonstrar o uso de:
 
 ---
 
-## 🧩 Arquitetura do Projeto
+## Arquitetura do Projeto
 
 O sistema tem 2 processos:
 
